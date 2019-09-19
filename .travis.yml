@@ -1,14 +1,28 @@
 language: node_js
 node_js:
-  - '10'
-install:
-  - npm install -g codecov
+  - "stable"
+before_script:
+  - "npm i -g gatsby"
+  - "npm i"
 script:
-  - yarn install
-  - yarn lint
-  - yarn test:coverage --runInBand --no-cache
-  - yarn test --runInBand --no-cache
-  - codecov
+  - yarn build
+# script:
+# - yarn lint
+# - yarn test:coverage --runInBand --no-cache
+# - yarn test --runInBand --no-cache
+# - codecov
+after_success:
+  - "npm run deploy"
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local_dir: public
+  keep-history: true
+  repo: anggao/anggao.github.com
+  target_branch: master
+  on:
+    branch: master
 cache:
   directories:
     - node_modules

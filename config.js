@@ -1,14 +1,14 @@
 'use strict';
 
 module.exports = {
-  url: 'https://lumen.netlify.com',
+  url: 'https://anggao.github.io',
   pathPrefix: '/',
-  title: 'Blog by John Doe',
-  subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+  title: 'Blog by Ang Gao',
+  subtitle: '',
   copyright: '© All rights reserved.',
   disqusShortname: '',
-  postsPerPage: 4,
-  googleAnalyticsId: 'UA-73379983-2',
+  postsPerPage: 10,
+  googleAnalyticsId: 'UA-34162724-1',
   useKatex: false,
   menu: [
     {
@@ -18,22 +18,18 @@ module.exports = {
     {
       label: 'About me',
       path: '/pages/about'
-    },
-    {
-      label: 'Contact me',
-      path: '/pages/contacts'
     }
   ],
   author: {
-    name: 'John Doe',
-    photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    name: 'Ang Gao',
+    photo: '/person_ang.png',
+    bio: 'Software Engineer @ TripAdvisor, CS Ph.D @ University College Cork',
     contacts: {
-      email: '',
+      email: 'anggao@me.com',
+      twitter: 'anggao',
+      github: 'anggao',
       facebook: '#',
       telegram: '#',
-      twitter: '#',
-      github: '#',
       rss: '',
       vkontakte: '',
       linkedin: '#',
