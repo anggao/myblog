@@ -19,9 +19,13 @@ const Layout = ({
   description,
   socialImage
 }: Props) => {
-  const { author, url } = useSiteMetadata();
-  const metaImage = socialImage != null ? socialImage : author.photo;
-  const metaImageUrl = url + withPrefix(metaImage);
+  const { url } = useSiteMetadata();
+
+  const hasMetaImage = socialImage != null && socialImage.length > 0;
+  let metaImageUrl;
+  if (hasMetaImage) {
+    metaImageUrl = url + withPrefix(socialImage);
+  }
 
   return (
     <div className={styles.layout}>
@@ -30,7 +34,9 @@ const Layout = ({
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta property="og:site_name" content={title} />
-        <meta property="og:image" content={metaImageUrl} />
+        {
+          hasMetaImage && <meta property="og:image" content={metaImageUrl} />
+        }
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
