@@ -1,3 +1,5 @@
+# [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)] [![Build Status](https://travis-ci.org/anggao/myblog.svg?branch=master)](https://travis-ci.org/anggao/myblog) 
+
 ## Features
 + [Lost Grid](http://lostgrid.org).
 + [Modern font stack](https://bitsofco.de/the-new-system-font-stack).
