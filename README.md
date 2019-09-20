@@ -1,4 +1,4 @@
-#   [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)] [![Build Status](https://travis-ci.org/anggao/myblog.svg?branch=master)](https://travis-ci.org/anggao/myblog) [![Netlify Status](https://api.netlify.com/api/v1/badges/dfa9778f-ed2d-4e83-a09e-42424f07e275/deploy-status)](https://app.netlify.com/sites/anggao/deploys)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)] [![Build Status](https://travis-ci.org/anggao/myblog.svg?branch=master)](https://travis-ci.org/anggao/myblog) [![Netlify Status](https://api.netlify.com/api/v1/badges/dfa9778f-ed2d-4e83-a09e-42424f07e275/deploy-status)](https://app.netlify.com/sites/anggao/deploys)
 
 ## Features
 + [Lost Grid](http://lostgrid.org).
