@@ -36,7 +36,9 @@ module.exports = {
       instagram: '#',
       line: '',
       gitlab: '',
-      weibo: ''
+      weibo: '',
+      codepen: '',
+      youtube: ''
     }
   }
 };
