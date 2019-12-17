@@ -3,7 +3,7 @@ title: "Hadoop 1.x Cluster Setup (HDFS only)"
 date: "2015-09-20"
 template: "post"
 draft: false
-slug: "/posts/hadoop-1x-cluster-setup-hdfs-only/"
+slug: "hadoop-1x-cluster-setup-hdfs-only"
 category: "hadoop"
 tags:
   - "hadoop"
@@ -12,26 +12,28 @@ socialImage: ""
 ---
 
 ### Purpose
+
 This document describes how to set up and configure a 3-nodes Hadoop 1.x Distributed File System (HDFS) cluster.
 
 ### Prerequisites
 
-+ 3 CentOS 6.x VMs
-+ In the following examples I have three nodes:
-+ node1: 192.168.0.11
-+ node2: 192.168.0.12
-+ node3: 192.168.0.13
-+ The finally setup will be:
-+ NameNode: node1
-+ Secondary NN: node2
-+ DataNode: node2 node3
+- 3 CentOS 6.x VMs
+- In the following examples I have three nodes:
+- node1: 192.168.0.11
+- node2: 192.168.0.12
+- node3: 192.168.0.13
+- The finally setup will be:
+- NameNode: node1
+- Secondary NN: node2
+- DataNode: node2 node3
 
 ### Steps
+
 **Followings steps are for: CentOS 6.7, Hadoop-1.2.1**
 
 #### Installing Software (3 nodes)
 
-+ Install Java 7
+- Install Java 7
 
 ```shell
 tar -xzvf jdk-7u79-linux-x64.gz
@@ -41,14 +43,14 @@ alternatives --config java
 ln -sf /opt/jdk1.7.0_79 /usr/java7
 ```
 
-+ Configure JAVA_HOME and PATH add following lines to ~/.bashrc
+- Configure JAVA_HOME and PATH add following lines to ~/.bashrc
 
 ```shell
 export JAVA_HOME=/usr/java7
 export PATH=$JAVA_HOME/bin:$PATH
 ```
 
-+ Prepare Hadoop 1.2.1 package
+- Prepare Hadoop 1.2.1 package
 
 ```shell
 http://mirrors.whoishostingthis.com/apache/hadoop/common/hadoop-1.2.1/hadoop-1.2.1.tar.gz
@@ -98,15 +100,15 @@ GATEWAY=192.168.0.1
 
 #### Setup passphraseless ssh
 
-+ Check that you can ssh to the localhost without a passphrase: `ssh localhost` If you cannot ssh to localhost without a passphrase, execute the following commands:
+- Check that you can ssh to the localhost without a passphrase: `ssh localhost` If you cannot ssh to localhost without a passphrase, execute the following commands:
 
 ```shell
 ssh-keygen -t rsa
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 
-+ Do the above steps for three nodes.
-+ To allow node1 (NameNode) able to start all DataNodes (passphraseless ssh to node2 and node3)
+- Do the above steps for three nodes.
+- To allow node1 (NameNode) able to start all DataNodes (passphraseless ssh to node2 and node3)
 
 ```shell
 # From node1
@@ -118,9 +120,10 @@ cat ~/root/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 
 #### Hadoop HDFS Config
+
 At this time basic setup is ready, we need to config HDFS
 
-+ config core-site.xml
+- config core-site.xml
 
 ```xml
 <configuration>
@@ -135,7 +138,7 @@ At this time basic setup is ready, we need to config HDFS
 </configuration>
 ```
 
-+ config hdfs-site.xml
+- config hdfs-site.xml
 
 ```xml
 <configuration>
@@ -146,7 +149,7 @@ At this time basic setup is ready, we need to config HDFS
 </configuration>
 ```
 
-+ define DataNodes and Secondary NN
+- define DataNodes and Secondary NN
 
 ```shell
 # vim /home/hadoop-1.2/slaves (define DataNodes)
@@ -156,14 +159,14 @@ node3
 node2
 ```
 
-+ JAVA_HOME for hadoop
+- JAVA_HOME for hadoop
 
 ```shell
 # vim /home/hadoop-1.2/conf/hadoop-env.sh
 export JAVA_HOME=/usr/java7
 ```
 
-+ copy configs to slaves
+- copy configs to slaves
 
 ```shell
 # From node1
@@ -171,7 +174,7 @@ scp /home/hadoop-1.2/conf/* root@node2:/home/hadoop-1.2/conf
 scp /home/hadoop-1.2/conf/* root@node3:/home/hadoop-1.2/conf
 ```
 
-+ format HDFS
+- format HDFS
 
 ```shell
 # Format namenode

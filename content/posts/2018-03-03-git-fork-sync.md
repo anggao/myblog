@@ -3,7 +3,7 @@ title: "Keeping a fork up to date"
 date: "2018-03-03"
 template: "post"
 draft: false
-slug: "/posts/git-fork-up-to-date/"
+slug: "git-fork-up-to-date"
 category: "git"
 tags:
   - "git"

@@ -3,7 +3,7 @@ title: "Hadoop 1.x Cluster Setup (MapReduce only)"
 date: "2015-10-05"
 template: "post"
 draft: false
-slug: "/posts/hadoop-1x-cluster-setup-mapreduce-only/"
+slug: "hadoop-1x-cluster-setup-mapreduce-only"
 category: "hadoop"
 tags:
   - "hadoop"
@@ -19,7 +19,7 @@ For [HDFS setup Hadoop 1.x Cluster Setup (HDFS only)](/posts/hadoop-1x-cluster-s
 
 ### Hadoop MapReduce Config
 
-+ config mapred-site.xml
+- config mapred-site.xml
 
 ```xml
 <configuration>
@@ -30,7 +30,7 @@ For [HDFS setup Hadoop 1.x Cluster Setup (HDFS only)](/posts/hadoop-1x-cluster-s
 </configuration>
 ```
 
-+ copy configs to slaves
+- copy configs to slaves
 
 ```xml
 # From node1
@@ -38,7 +38,7 @@ scp /home/hadoop-1.2/conf/* root@node2:/home/hadoop-1.2/conf
 scp /home/hadoop-1.2/conf/* root@node3:/home/hadoop-1.2/conf
 ```
 
-+ start MapReduce
+- start MapReduce
 
 ```shell
 /home/hadoop-1.2/bin/start-mapred.sh

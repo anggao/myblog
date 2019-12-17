@@ -3,7 +3,7 @@ title: "Python Note One"
 date: "2013-08-28"
 template: "post"
 draft: false
-slug: "/posts/python-note-one/"
+slug: "python-note-one"
 category: "python"
 tags:
   - "python"
@@ -11,7 +11,8 @@ description: ""
 socialImage: ""
 ---
 
-+ Hexaadecimals and Octals
+- Hexaadecimals and Octals
+
 ```python
 >>>0XAF
 175
@@ -19,7 +20,8 @@ socialImage: ""
 8
 ```
 
-+ Complex number arithmetic
+- Complex number arithmetic
+
 ```python
 >>>import cmath
 >>>cmath.sqrt(-1)
@@ -28,19 +30,21 @@ socialImage: ""
 -3+31j
 ```
 
-+ `#!/usr/bin/env python`
+- `#!/usr/bin/env python`
 
-+ Container consists of sequences and mappings
+- Container consists of sequences and mappings
 
-+ Python has six built-in types of sequence: `lists`, `tuples`, `unicode strings`, `strings`, `buffer objects`, `xrange objects`
+- Python has six built-in types of sequence: `lists`, `tuples`, `unicode strings`, `strings`, `buffer objects`, `xrange objects`
 
-+ extracting elements from right to left:
+- extracting elements from right to left:
+
 ```python
 >>>numbers[8:3:-1]
 [9,8,7,6,5]
 ```
 
-+ convert between list and string
+- convert between list and string
+
 ```python
 >>>list('Hello')
 ['H', 'e', 'l', 'l', 'o']
@@ -48,39 +52,42 @@ socialImage: ""
 'Hello'
 ```
 
-+ `a.extend(b)` can be done by `a[len(a):] = b`
+- `a.extend(b)` can be done by `a[len(a):] = b`
 
-+ `numbers.insert(3, 'four')` can be done in `numbers[3:3]=['four']` 
+- `numbers.insert(3, 'four')` can be done in `numbers[3:3]=['four']`
 
-+ `pop` remove an element (by default the last one) from the list and return it. `pop(0)` remove the first
+- `pop` remove an element (by default the last one) from the list and return it. `pop(0)` remove the first
 
-+ `remove` remove the first occurrence of a value
+- `remove` remove the first occurrence of a value
 
-+ `sorted(cmp, key=None, reverse=False)` 
+- `sorted(cmp, key=None, reverse=False)`
 
-+ Format specifier: 
-    - `%`
-    - Conversion flags
-        * `-` left alignment
-        * `+` a sign should precede the convered value.
-        * ` ` a space should precede positive numbers
-        * `0` zero padded
-    - Minimum field width: if `*` the width will be read from the value tuple
-    - `.` followed by precision
-    - Conversion type:
-        * eg `x` hexadecimal 
-        * `'%x' % 42` => 2a
+- Format specifier:
 
-    - Examples:
-        * `'%10f' % pi` => `  3.141593`
-        * `'%10.2f' % pi` => `      3.14`
-        * `'%.2f' %pi` => `3.14`
-        * `'%.5s' % 'Ang Gao'` => `'Ang G'`
-        * `'%.*s' % (5, 'Ang 'Gao')` => `'Ang G'`
-        * `'%010.2f' % pi` => `0000003.14`
-        * `'%-10.2f' % pi` => `3.14      `
+  - `%`
+  - Conversion flags
+    - `-` left alignment
+    - `+` a sign should precede the convered value.
+    - `` a space should precede positive numbers
+    - `0` zero padded
+  - Minimum field width: if `*` the width will be read from the value tuple
+  - `.` followed by precision
+  - Conversion type:
 
-+ String translate: only works with single character
+    - eg `x` hexadecimal
+    - `'%x' % 42` => 2a
+
+  - Examples:
+    - `'%10f' % pi` => `3.141593`
+    - `'%10.2f' % pi` => `3.14`
+    - `'%.2f' %pi` => `3.14`
+    - `'%.5s' % 'Ang Gao'` => `'Ang G'`
+    - `'%.*s' % (5, 'Ang 'Gao')` => `'Ang G'`
+    - `'%010.2f' % pi` => `0000003.14`
+    - `'%-10.2f' % pi` => `3.14`
+
+- String translate: only works with single character
+
 ```python
 >>>from string import maketrans
 >>>table = maketrans('cs', 'kz')
@@ -88,40 +95,43 @@ socialImage: ""
 256
 >>>str1.translate(table)
 ```
+
 optional second argument can be supplied to translate,
 specifying letters that should be delete: `text.translate(table, 'ab')`
 
+- String translate in PY3
 
-+ String translate in PY3
 ```python
 >>>str1.translate({ord('t'):ord('x')})
 ```
 
-+ String formatting with dict: `'%('))le)s' % {'title':'Ang'}`
+- String formatting with dict: `'%('))le)s' % {'title':'Ang'}`
 
-+ dict methods
-    - copy(): shallow copy
-    - deep copy: `from copy import deepcopy` `dc = deepcopy(dit)`
-    - fromkeys: create new dict with the given keys
-        * `{}.fromkeys(['name', 'age'])`
-        * `dict.fromkeys(['name', 'age'])`
-        * `dict.fromkeys(['name', 'age'], 'unknown')`
-    - get: return None if key not exists or supply default value
-        * `names.get('name', 'default')`
-    - pop(key): get value, remove key-value pair
-    - popitem(): pops off an arbitrary item (key, value)
-    - setdefault: similar to get retrieve a value associate with a key, sets the value corresponding
-        to the given key if it is not in dict
+- dict methods
 
-+ In PY3: `a,b,*rest = [1,2,3,4]`
+  - copy(): shallow copy
+  - deep copy: `from copy import deepcopy` `dc = deepcopy(dit)`
+  - fromkeys: create new dict with the given keys
+    - `{}.fromkeys(['name', 'age'])`
+    - `dict.fromkeys(['name', 'age'])`
+    - `dict.fromkeys(['name', 'age'], 'unknown')`
+  - get: return None if key not exists or supply default value
+    - `names.get('name', 'default')`
+  - pop(key): get value, remove key-value pair
+  - popitem(): pops off an arbitrary item (key, value)
+  - setdefault: similar to get retrieve a value associate with a key, sets the value corresponding
+    to the given key if it is not in dict
 
-+ `chr(ord('a')) = 'a'`
+- In PY3: `a,b,*rest = [1,2,3,4]`
 
-+ `name = raw_input('Name ') or 'unknown'` 
+- `chr(ord('a')) = 'a'`
 
-+ `assert expression [, msg]`
+- `name = raw_input('Name ') or 'unknown'`
 
-+ else clauses in loop:
+- `assert expression [, msg]`
+
+- else clauses in loop:
+
 ```python
 for x in range(10):
     if x == 5:
@@ -130,7 +140,8 @@ else:
     print 'only called if loop completed without break'
 ```
 
-+ `exec` VS `eval`
+- `exec` VS `eval`
+
 ```python
 >>>scope = {}
 >>> exec 'sqrt = 1' in scope
@@ -140,15 +151,17 @@ else:
 
 `eval(raw_input(...))` has same effect as `input(..)`
 
-+ `callable(x)` in PY3 `hasattr(x, '__call__')`
+- `callable(x)` in PY3 `hasattr(x, '__call__')`
 
-+ scoping
-    - vars()
-        * without argument = `locals()`
-        * with argument = `object.__dict__`
-    - globals(): a dict with the global vars
+- scoping
 
-+ change global var
+  - vars()
+    - without argument = `locals()`
+    - with argument = `object.__dict__`
+  - globals(): a dict with the global vars
+
+- change global var
+
 ```python
 x = 1
 def change_global():
@@ -156,8 +169,8 @@ def change_global():
     x = x + 1
 ```
 
-+ A function that stores its enclosing scope is called a **closure**. Normally cannot 
-rebind var in outter scope, in PY3 the keyword **nonlocal** is introduced. It is used
-in much the same way as **global**, and lets you assign vars in outter but none global scopes
+- A function that stores its enclosing scope is called a **closure**. Normally cannot
+  rebind var in outter scope, in PY3 the keyword **nonlocal** is introduced. It is used
+  in much the same way as **global**, and lets you assign vars in outter but none global scopes
 
-+ `map`, `filter`, `reduce` moved to `functools` module
+- `map`, `filter`, `reduce` moved to `functools` module

@@ -3,7 +3,7 @@ title: "Design Pattern: Singleton"
 date: "2013-05-22"
 template: "post"
 draft: false
-slug: "/posts/design-pattern-singleton/"
+slug: "design-pattern-singleton"
 category: "Design Pattern"
 tags:
   - "java"
@@ -15,13 +15,14 @@ Singleton pattern ensures that there is only one instance of a class is created
 in JVM. It is used to provide global point of access to the object.
 
 ###Implementation example: Lazy initialization
+
 ```java
 public class Singleton {
     private static Singleton instance;
-    
+
     private Singleton() {
     }
-    
+
     public static Singleton getInstance() {
         if (instance == null)
             instance = new Singleton();
@@ -31,6 +32,7 @@ public class Singleton {
 ```
 
 ###Implementation example: Eager initialization
+
 ```java
 public class Singleton {
     private static Singleton instance = new Singleton()
@@ -44,6 +46,6 @@ public class Singleton {
 }
 ```
 
-In the second implementation, the Singleton instance is instantiated when the 
+In the second implementation, the Singleton instance is instantiated when the
 class is loaded, while in the first implementation, the instance is not instantiated until
 it is acturally needed, but the first implementation is not thread safe.

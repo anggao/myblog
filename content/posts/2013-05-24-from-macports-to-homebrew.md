@@ -3,7 +3,7 @@ title: "From MacPorts to Homebrew"
 date: "2013-05-24"
 template: "post"
 draft: false
-slug: "/posts/from-macPorts-to-homebrew/"
+slug: "from-macPorts-to-homebrew"
 category: "osx"
 tags:
   - "tools"
@@ -11,8 +11,7 @@ description: ""
 socialImage: ""
 ---
 
-
-Recently I changed my Mac package management tool from MacPorts to Homebrew, 
+Recently I changed my Mac package management tool from MacPorts to Homebrew,
 since Homebrew is lightweight and much faster, here is the steps I followed:
 
 1. Remove MacPorts:
@@ -33,7 +32,9 @@ sudo rm -rf \
 ```
 
 2. Install Homebrew:
+
 ```shell
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 ```
+
 3. Homebrew installs binaries to `/usr/local/bin`

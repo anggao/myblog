@@ -3,7 +3,7 @@ title: "tmux basics"
 date: "2013-04-24"
 template: "post"
 draft: false
-slug: "/posts/tmux-basics/"
+slug: "tmux-basics"
 category: "linux"
 tags:
   - "tmux"
@@ -14,7 +14,8 @@ socialImage: ""
 
 ###tmux server -> sessions -> windows -> panes
 
-* Session Management
+- Session Management
+
 ```shell
 tmux list-sessions
 tmux new-session -s session-name
@@ -24,7 +25,8 @@ tmux kill-session -t session-name
 tmux kill-server
 ```
 
-* Windows 
+- Windows
+
 ```shell
 tmux new-window (prefix + c)   create window
 tmux select-window -t [0-9]    (prefix + [0-9])
@@ -32,7 +34,8 @@ tmux rename-window             (prefix + ,)
 prefix+?                       help
 ```
 
-* Panes
+- Panes
+
 ```shell
 tmux split-window (prefix + s)     split the window into two vertical panes
 tmux split-window -h (prefix + v)  split the window into two horizontal panes
@@ -40,18 +43,20 @@ prefix + [hjkl]                    move arount panes wiht hjkl, as one would in 
 prefix + [<>+-]                  resize panes like vim
 ```
 
-* Copy mode 
+- Copy mode
+
 ```shell
-prefix + [    enter copy mode, move like in vim 
+prefix + [    enter copy mode, move like in vim
 prefix + ]    paste
 ```
 
-* Others
+- Others
+
 ```shell
 prefix + t    show clock
 ```
 
-* Basic settings
+- Basic settings
 
 ```shell
 # remap prefix to Control + a

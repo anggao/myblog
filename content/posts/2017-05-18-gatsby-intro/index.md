@@ -3,7 +3,7 @@ title: "Gatsby - Blazing fast React.js static site generator"
 date: "2017-05-18"
 template: "post"
 draft: false
-slug: "/posts/gatsby-intro/"
+slug: "gatsby-intro"
 category: "react"
 socialImage: ""
 tags:
