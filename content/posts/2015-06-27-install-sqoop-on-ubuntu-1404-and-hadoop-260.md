@@ -3,7 +3,7 @@ title: "Install Sqoop on Ubuntu 14.04 and Hadoop 2.6.0"
 date: "2015-06-27"
 template: "post"
 draft: false
-slug: "/posts/install-sqoop-on-ubuntu-1404-and-hadoop-260/"
+slug: "install-sqoop-on-ubuntu-1404-and-hadoop-260"
 category: "hadoop"
 tags:
   - "hadoop"
@@ -15,7 +15,7 @@ socialImage: ""
 
 For [Hadoop 2.6.0 Installation on Ubuntu 14.04](/posts/hadoop-setting-up-a-single-node-cluster/)
 
-+ Scoop Installation
+- Scoop Installation
 
 ```shell
 wget http://apache.proserve.nl/sqoop/1.4.6/sqoop-1.4.6.bin__hadoop-2.0.4-alpha.tar.gz
@@ -37,7 +37,7 @@ wget https://jdbc.postgresql.org/download/postgresql-9.4-1201.jdbc4.jar
 sqoop version
 ```
 
-+ Scoop examples
+- Scoop examples
 
 ```shell
 # transfer data from PostgreSQL to HDFS

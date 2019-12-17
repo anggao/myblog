@@ -3,7 +3,7 @@ title: "Pelican basic"
 date: "2014-11-08"
 template: "post"
 draft: false
-slug: "/posts/pelican-basic/"
+slug: "pelican-basic"
 category: "python"
 tags:
   - "python"

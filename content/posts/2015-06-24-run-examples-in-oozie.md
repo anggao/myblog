@@ -3,7 +3,7 @@ title: "Run Examples in Oozie"
 date: "2015-06-24"
 template: "post"
 draft: false
-slug: "/posts/run-examples-in-oozie/"
+slug: "run-examples-in-oozie"
 category: "hadoop"
 tags:
   - "hadoop"
@@ -11,14 +11,14 @@ description: ""
 socialImage: ""
 ---
 
-+ Extract Examples Tarball file
+- Extract Examples Tarball file
 
 ```shell
 cd $OOZIE_HOME
 tar -xzvf oozie-examples.tar.gz
 ```
 
-+ Edit job.properties file
+- Edit job.properties file
 
 ```shell
 cd examples/apps/map-reduce
@@ -30,7 +30,7 @@ vim job.properties
     examplesRoot=examples
 ```
 
-+ Copy examples into HDFS
+- Copy examples into HDFS
 
 ```shell
 hadoop fs -put examples examples

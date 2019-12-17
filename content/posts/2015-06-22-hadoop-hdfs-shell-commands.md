@@ -3,7 +3,7 @@ title: "Hadoop: HDFS Shell Commands"
 date: "2015-06-22"
 template: "post"
 draft: false
-slug: "/posts/hadoop-hdfs-shell-commands/"
+slug: "hadoop-hdfs-shell-commands"
 category: "hadoop"
 tags:
   - "hadoop"

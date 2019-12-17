@@ -3,7 +3,7 @@ title: "JavaScript Note Six"
 date: "2015-09-09"
 template: "post"
 draft: false
-slug: "/posts/javascript-note-six/"
+slug: "javascript-note-six"
 category: "javascript"
 tags:
   - "javascript"
@@ -16,8 +16,8 @@ socialImage: ""
 ```javascript
 try {
   (function() {
-    throw new Error("Error !")
-  })()
+    throw new Error("Error !");
+  })();
 } catch (error) {
   console.log("Something went wrong: " + error);
 } finally {
@@ -25,10 +25,9 @@ try {
 }
 ```
 
-
-+ JavaScript (in a rather glaring omission) doesn’t provide direct support for selectively catching exceptions
-+ We want to catch a specific kind of exception. We can do this by checking in the catch block whether the exception we got is the one we are interested in and by rethrowing it otherwise
-+ let’s define a new type of error and use instanceof to identify it.
+- JavaScript (in a rather glaring omission) doesn’t provide direct support for selectively catching exceptions
+- We want to catch a specific kind of exception. We can do this by checking in the catch block whether the exception we got is the one we are interested in and by rethrowing it otherwise
+- let’s define a new type of error and use instanceof to identify it.
 
 ```javascript
 function InputError(message) {
@@ -48,7 +47,7 @@ try {
 }
 ```
 
-+ Assertions are a tool to do basic sanity checking for programmer errors.
+- Assertions are a tool to do basic sanity checking for programmer errors.
 
 ```javascript
 function AssertionFailed(Message) {
@@ -56,15 +55,14 @@ function AssertionFailed(Message) {
 }
 AssertionFailed.prototype = Object.create(Error.prototype);
 function assert(test, message) {
-  if (!test)
-    throw new AssertionFailed(message);
+  if (!test) throw new AssertionFailed(message);
 }
 ```
 
 ### Regular Expressions
 
-+ A regular expression is a type of object
-+ It can either be constructed with the RegExp constructor or written as a literal value by enclosing the pattern in forward slash (`/`) characters.
+- A regular expression is a type of object
+- It can either be constructed with the RegExp constructor or written as a literal value by enclosing the pattern in forward slash (`/`) characters.
 
 ```javascript
 var re1 = new RegExp("abc");
@@ -75,13 +73,13 @@ console.log(/[0-9]/.test("in 1992"));
 // → true
 ```
 
-+ `\d` Any digit character, means the same thing as `[0-9]`.
-+ `\w` An alphanumeric character (“word character”)
-+ `\s` Any whitespace character (space, tab, newline, and similar)
-+ `\D` A character that is not a digit
-+ `\W` A nonalphanumeric character
-+ `\S` A nonwhitespace character
-+ `.` Any character except for newline
+- `\d` Any digit character, means the same thing as `[0-9]`.
+- `\w` An alphanumeric character (“word character”)
+- `\s` Any whitespace character (space, tab, newline, and similar)
+- `\D` A character that is not a digit
+- `\W` A nonalphanumeric character
+- `\S` A nonwhitespace character
+- `.` Any character except for newline
 
 ```javascript
 var dateTime = /\d\d-\d\d-\d\d\d\d \d\d:\d\d/;
@@ -96,7 +94,7 @@ console.log(notBinary.test("1100100010200110"));
 // → true
 ```
 
-+ These backslash codes can also be used inside square brackets. For example, `[\d.]` means any digit or a period character. But note that the period itself, when used between square brackets, loses its special meaning. The same goes for other special characters, such as `+.`
+- These backslash codes can also be used inside square brackets. For example, `[\d.]` means any digit or a period character. But note that the period itself, when used between square brackets, loses its special meaning. The same goes for other special characters, such as `+.`
 
 #### Repeating parts of a pattern
 
@@ -114,11 +112,11 @@ console.log(cartoonCrying.test("Boohoooohoohooo"));
 // → true
 ```
 
-+ The `i` at the end of the expression in the previous example makes this regular expression case insensitive
+- The `i` at the end of the expression in the previous example makes this regular expression case insensitive
 
 #### Matches and groups
 
-+ Regular expressions also have an `exec` (execute) method that will return `null` if no match was found and return an object with information about the match otherwise.
+- Regular expressions also have an `exec` (execute) method that will return `null` if no match was found and return an object with information about the match otherwise.
 
 ```javascript
 var match = /\d+/.exec("one two 100");
@@ -128,15 +126,15 @@ console.log(match.index);
 // → 8
 ```
 
-+ String values have a match method that behaves similarly.
+- String values have a match method that behaves similarly.
 
 ```javascript
 console.log("one two 100".match(/\d+/));
 // → ["100"]
 ```
 
-+ When the regular expression contains subexpressions grouped with parentheses, the text that matched those groups will also show up in the array.
-+ When a group does not end up being matched at all (for example, when followed by a question mark), its position in the output array will hold undefined. Similarly, when a group is matched multiple times, only the last match ends up in the array.
+- When the regular expression contains subexpressions grouped with parentheses, the text that matched those groups will also show up in the array.
+- When a group does not end up being matched at all (for example, when followed by a question mark), its position in the output array will hold undefined. Similarly, when a group is matched multiple times, only the last match ends up in the array.
 
 ```javascript
 var quotedText = /'([^']*)'/;
@@ -150,7 +148,7 @@ console.log(/(\d)+/.exec("123"));
 
 ### The date type
 
-+ JavaScript has a standard object type for representing dates—or rather, points in time. It is called `Date`.
+- JavaScript has a standard object type for representing dates—or rather, points in time. It is called `Date`.
 
 ```javascript
 console.log(new Date());
@@ -161,8 +159,8 @@ console.log(new Date(2009, 11, 9, 12, 59, 59, 999));
 // → Wed Dec 09 2009 12:59:59 GMT+0100 (CET)
 ```
 
-+ JavaScript uses a convention where **month numbers start at zero (so December is 11)**, yet day numbers start at one. This is confusing and silly. Be careful.
-+ The `getTime` method on a date object returns “Unix time”
+- JavaScript uses a convention where **month numbers start at zero (so December is 11)**, yet day numbers start at one. This is confusing and silly. Be careful.
+- The `getTime` method on a date object returns “Unix time”
 
 ```javascript
 console.log(new Date(2013, 11, 19).getTime());
@@ -173,16 +171,14 @@ console.log(new Date(1387407600000));
 function findDate(string) {
   var dateTime = /(\d{1,2})-(\d{1,2})-(\d{4})/;
   var match = dateTime.exec(string);
-  return new Date(Number(match[3]),
-                  Number(match[2]) - 1,
-                  Number(match[1]));
+  return new Date(Number(match[3]), Number(match[2]) - 1, Number(match[1]));
 }
 console.log(findDate("30-1-2003"));
 // → Thu Jan 30 2003 00:00:00 GMT+0100 (CET)
 ```
 
-+ If we want to enforce that the match must span the whole string, we can add the markers `^` and `$`.
-+ If, on the other hand, we just want to make sure the date starts and ends on a word boundary, we can use the marker `\b`.
+- If we want to enforce that the match must span the whole string, we can add the markers `^` and `$`.
+- If, on the other hand, we just want to make sure the date starts and ends on a word boundary, we can use the marker `\b`.
 
 ```javascript
 console.log(/cat/.test("concatenate"));
@@ -191,12 +187,13 @@ console.log(/\bcat\b/.test("concatenate"));
 // → false
 ```
 
-+ The regular expression `/\b([01]+b|\d+|[\da-f]+h)\b/` matches either a binary number followed by a `b`, a regular decimal number with no suffix character, or a hexadecimal number (that is, base 16, with the letters a to f standing for the digits 10 to 15) followed by an `h`.
+- The regular expression `/\b([01]+b|\d+|[\da-f]+h)\b/` matches either a binary number followed by a `b`, a regular decimal number with no suffix character, or a hexadecimal number (that is, base 16, with the letters a to f standing for the digits 10 to 15) followed by an `h`.
 
 #### The replace method
-+ String values have a replace method, which can be used to replace part of the string with another string.
-+ The first argument can also be a regular expression, in which case the first match of the regular expression is replaced
-+ When a `g` option (for global) is added to the regular expression, all matches in the string will be replaced, not just the first.
+
+- String values have a replace method, which can be used to replace part of the string with another string.
+- The first argument can also be a regular expression, in which case the first match of the regular expression is replaced
+- When a `g` option (for global) is added to the regular expression, all matches in the string will be replaced, not just the first.
 
 ```javascript
 console.log("Borobudur".replace(/[ou]/, "a"));
@@ -205,20 +202,24 @@ console.log("Borobudur".replace(/[ou]/g, "a"));
 // → Barabadar
 
 console.log(
-  "Hopper, Grace\nMcCarthy, John\nRitchie, Dennis"
-    .replace(/([\w ]+), ([\w ]+)/g, "$2 $1"));
+  "Hopper, Grace\nMcCarthy, John\nRitchie, Dennis".replace(
+    /([\w ]+), ([\w ]+)/g,
+    "$2 $1"
+  )
+);
 // → Grace Hopper
 //   John McCarthy
 //   Dennis Ritchie
 ```
 
-+ The `$1` and `$2` in the replacement string refer to the parenthesized groups in the pattern.
-+ The whole match can be referred to with `$&`.
-+ It is also possible to pass a function, rather than a string, as the second argument to replace. For each replacement, the function will be called with the matched groups (as well as the whole match) as arguments, and its return value will be inserted into the new string.
+- The `$1` and `$2` in the replacement string refer to the parenthesized groups in the pattern.
+- The whole match can be referred to with `$&`.
+- It is also possible to pass a function, rather than a string, as the second argument to replace. For each replacement, the function will be called with the matched groups (as well as the whole match) as arguments, and its return value will be inserted into the new string.
 
 #### Greed
-+ The repetition operators (`+, *, ?, and {}`) are greedy, meaning they match as much as they can and backtrack from there.
-+ If you put a question mark after them (`+?, *?, ??, {}?`), they become nongreedy and start by matching as little as possible
+
+- The repetition operators (`+, *, ?, and {}`) are greedy, meaning they match as much as they can and backtrack from there.
+- If you put a question mark after them (`+?, *?, ??, {}?`), they become nongreedy and start by matching as little as possible
 
 #### Dynamically creating RegExp objects
 
@@ -230,7 +231,7 @@ console.log(text.replace(regexp, "_$1_"));
 // → _Harry_ is a suspicious character.
 ```
 
-+ Adding backslashes before alphabetic characters is a bad idea because things like `\b` and `\n` have a special meaning. But escaping everything that’s not alphanumeric or whitespace is safe.
+- Adding backslashes before alphabetic characters is a bad idea because things like `\b` and `\n` have a special meaning. But escaping everything that’s not alphanumeric or whitespace is safe.
 
 ```javascript
 var name = "dea+hl[]rd";
@@ -243,8 +244,8 @@ console.log(text.replace(regexp, "_$1_"));
 
 #### The search method
 
-+ The `indexOf` method on strings cannot be called with a regular expression.
-+ There is another method, `search`, which does expect a regular expression
+- The `indexOf` method on strings cannot be called with a regular expression.
+- There is another method, `search`, which does expect a regular expression
 
 ```javascript
 console.log("  word".search(/\S/));
@@ -254,11 +255,12 @@ console.log("    ".search(/\S/));
 ```
 
 #### The lastIndex property
-+ Regular expression objects have properties.
-+ `source`, which contains the string that expression was created from
-+ `lastIndex`, which controls, in some limited circumstances, where the next match will start
-+ Those circumstances are that the regular expression must have the global (g) option enabled, and the match must happen through the `exec` method
-+ If the match was successful, the call to `exec` automatically updates the `lastIndex` property to point after the match. If no match was found, `lastIndex` is set back to zero
+
+- Regular expression objects have properties.
+- `source`, which contains the string that expression was created from
+- `lastIndex`, which controls, in some limited circumstances, where the next match will start
+- Those circumstances are that the regular expression must have the global (g) option enabled, and the match must happen through the `exec` method
+- If the match was successful, the call to `exec` automatically updates the `lastIndex` property to point after the match. If no match was found, `lastIndex` is set back to zero
 
 #### Looping over matches
 
@@ -266,7 +268,7 @@ console.log("    ".search(/\S/));
 var input = "A string with 3 numbers in it... 42 and 88.";
 var number = /\b(\d+)\b/g;
 var match;
-while (match = number.exec(input))
+while ((match = number.exec(input)))
   console.log("Found", match[1], "at", match.index);
 // → Found 3 at 14
 //   Found 42 at 33
@@ -278,19 +280,18 @@ while (match = number.exec(input))
 ```javascript
 function parseINI(string) {
   // Start with an object to hold the top-level fields
-  var currentSection = {name: null, fields: []};
+  var currentSection = { name: null, fields: [] };
   var categories = [currentSection];
 
   string.split(/\r?\n/).forEach(function(line) {
     var match;
     if (/^\s*(;.*)?$/.test(line)) {
       return;
-    } else if (match = line.match(/^\[(.*)\]$/)) {
-      currentSection = {name: match[1], fields: []};
+    } else if ((match = line.match(/^\[(.*)\]$/))) {
+      currentSection = { name: match[1], fields: [] };
       categories.push(currentSection);
-    } else if (match = line.match(/^(\w+)=(.*)$/)) {
-      currentSection.fields.push({name: match[1],
-                                  value: match[2]});
+    } else if ((match = line.match(/^(\w+)=(.*)$/))) {
+      currentSection.fields.push({ name: match[1], value: match[2] });
     } else {
       throw new Error("Line '" + line + "' is invalid.");
     }
@@ -302,8 +303,8 @@ function parseINI(string) {
 
 #### International characters
 
-+ Things like `é` or `β`, which most definitely are word characters, will not match `\w` (and will match uppercase `\W`, the nonword category).
-+ By a strange historical accident, `\s` (whitespace) does not have this problem and matches all characters that the Unicode standard considers whitespace
+- Things like `é` or `β`, which most definitely are word characters, will not match `\w` (and will match uppercase `\W`, the nonword category).
+- By a strange historical accident, `\s` (whitespace) does not have this problem and matches all characters that the Unicode standard considers whitespace
 
 #### Summary
 

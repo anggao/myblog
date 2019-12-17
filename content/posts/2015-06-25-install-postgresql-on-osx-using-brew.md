@@ -3,7 +3,7 @@ title: "Install PostgreSQL on OSX using brew"
 date: "2015-06-25"
 template: "post"
 draft: false
-slug: "/posts/install-postgresql-on-osx-using-brew/"
+slug: "install-postgresql-on-osx-using-brew"
 category: "postgres"
 tags:
   - "postgres"
@@ -11,46 +11,46 @@ description: ""
 socialImage: ""
 ---
 
-+ Install PostgreSQL using brew If you don’t have homebrew, install it first. Then simply run the command:
+- Install PostgreSQL using brew If you don’t have homebrew, install it first. Then simply run the command:
 
 ```shell
 brew install postgres
 ```
 
-+ Initialize PostgreSQL
+- Initialize PostgreSQL
 
 ```shell
 initdb ~/pg-data
 ```
 
-+ Start PostgreSQL service
+- Start PostgreSQL service
 
 ```shell
 postgres -D ~/pg-data
 ```
 
-+ Create a user
+- Create a user
 
 ```shell
 # If you wish to create a user without a password just take the --pwprompt off the command.
 createuser --pwprompt username
 ```
 
-+ Create a database
+- Create a database
 
 ```shell
 # The -O indicates the user that will become the owner of the database.
 createdb -Ousername -Eutf8 dev-db
-``` 
+```
 
-+ Access the Database
+- Access the Database
 
 ```shell
 # The -U means to login using that username and the -W means to prompt for a password.
 psql -U username -W dev-db
 ```
 
-+ Remote Connection to PostgreSQL Database using psql
+- Remote Connection to PostgreSQL Database using psql
 
 ```shell
 # edit pg_hba.conf at pg-data

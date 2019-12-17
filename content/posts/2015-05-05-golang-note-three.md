@@ -3,7 +3,7 @@ title: "Golang Note Three"
 date: "2015-05-05"
 template: "post"
 draft: false
-slug: "/posts/golang-note-three/"
+slug: "golang-note-three"
 category: "golang"
 tags:
   - "golang"
@@ -13,21 +13,21 @@ socialImage: ""
 
 ### Methods
 
-+ Go does not have classes. However, you can define methods on struct types.
-+ The `method receiver` appears in its own argument list between the func keyword and the method name.
-+ You can declare a method on any type that is declared in your package, not just struct types.
-+ You cannot define a method on a type from another package (including built in types).
-+ Methods can be associated with a named type or a pointer to a named type.
+- Go does not have classes. However, you can define methods on struct types.
+- The `method receiver` appears in its own argument list between the func keyword and the method name.
+- You can declare a method on any type that is declared in your package, not just struct types.
+- You cannot define a method on a type from another package (including built in types).
+- Methods can be associated with a named type or a pointer to a named type.
   - There are two reasons to use a pointer receiver.
   - Avoid copying the value on each method call (more efficient if the value type is a large struct)
   - The method can modify the value that its receiver points to.
 
 ### Interfaces
 
-+ An interface type is defined by a set of methods.
-+ A value of interface type can hold any value that implements those methods.
-+ One of the most ubiquitous interfaces is `Stringer` defined by the `fmt` package.
-+ A Stringer is a type that can describe itself as a string.
+- An interface type is defined by a set of methods.
+- A value of interface type can hold any value that implements those methods.
+- One of the most ubiquitous interfaces is `Stringer` defined by the `fmt` package.
+- A Stringer is a type that can describe itself as a string.
 
 ```go
 type Stringer interface {
@@ -37,8 +37,8 @@ type Stringer interface {
 
 ### Errors
 
-+ Go programs express error state with error values.
-+ The `error` type is a built-in interface simliar to `fmt.Stringer`
+- Go programs express error state with error values.
+- The `error` type is a built-in interface simliar to `fmt.Stringer`
 
 ```go
 type error interface {
@@ -46,7 +46,7 @@ type error interface {
 }
 ```
 
-+ Functions often return an `error` value, and calling code should handle errors by testing whether the error equals `nil`.
+- Functions often return an `error` value, and calling code should handle errors by testing whether the error equals `nil`.
 
 ```go
 i, err := strconv.Atoi("42")
@@ -58,7 +58,7 @@ fmt.Println("Converted integer:", i)
 
 ### Readers
 
-+ The `io` package specifies the `io.Reader` interface, which represents the read end of a stream of data.
+- The `io` package specifies the `io.Reader` interface, which represents the read end of a stream of data.
 
 ```go
 func (T) Read(b []byte) (n int, err error)
@@ -68,7 +68,7 @@ func (T) Read(b []byte) (n int, err error)
 
 ### Web servers
 
-+ Package `http` serves HTTP requests using any value that implements `http.Handler`
+- Package `http` serves HTTP requests using any value that implements `http.Handler`
 
 ```go
 package http
@@ -77,4 +77,3 @@ type Handler interface {
     ServeHTTP(w ResponseWriter, r *Request)
 }
 ```
-

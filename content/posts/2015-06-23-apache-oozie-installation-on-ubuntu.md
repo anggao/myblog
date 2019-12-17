@@ -2,7 +2,7 @@
 title: "Apache Oozie Installation on Ubuntu"
 date: "2015-06-23"
 template: "post"
-slug: "/posts/apache-oozie-installation-on-ubuntu/"
+slug: "apache-oozie-installation-on-ubuntu"
 category: "hadoop"
 tags:
   - "hadoop"
@@ -35,7 +35,7 @@ bin/mkdistro.sh -DskipTests -Dhadoopversion=2.6.0
 # copy the binary distribution
 cp -R distro/target/oozie-4.1.0-distro/oozie-4.1.0/* ~/oozie-4.1
 
-# edit /etc/profile 
+# edit /etc/profile
 sudo vim /etc/profile
 
     export OOZIE_VERSION=4.1.0
@@ -113,7 +113,7 @@ oozie-setup.sh sharelib create -fs hdfs://YARN001:8020
 ```
 
 ```shell
-# Create oozie database 
+# Create oozie database
 ooziedb.sh create -sqlfile oozie.sql -run
 
 # Start Oozie Service

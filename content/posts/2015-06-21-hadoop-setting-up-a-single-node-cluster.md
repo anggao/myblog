@@ -2,7 +2,7 @@
 title: "Hadoop: Setting up a Single Node Cluster"
 date: "2015-06-21"
 template: "post"
-slug: "/posts/hadoop-setting-up-a-single-node-cluster/"
+slug: "hadoop-setting-up-a-single-node-cluster"
 category: "hadoop"
 tags:
   - "hadoop"
@@ -16,10 +16,10 @@ This document describes how to set up and configure a single-node Hadoop install
 
 ### Prerequisites
 
-+ GNU/Linux
-+ `Java` must be installed. Recommended Java versions are described at [HadoopJavaVersions](http://wiki.apache.org/hadoop/HadoopJavaVersions)
-+ `ssh` must be installed and sshd must be running to use the Hadoop scripts that manage remote Hadoop daemons.
-A Hadoop distribution, download a recent stable release from one of the [Apache Download Mirrors](http://www.apache.org/dyn/closer.cgi/hadoop/common/)
+- GNU/Linux
+- `Java` must be installed. Recommended Java versions are described at [HadoopJavaVersions](http://wiki.apache.org/hadoop/HadoopJavaVersions)
+- `ssh` must be installed and sshd must be running to use the Hadoop scripts that manage remote Hadoop daemons.
+  A Hadoop distribution, download a recent stable release from one of the [Apache Download Mirrors](http://www.apache.org/dyn/closer.cgi/hadoop/common/)
 
 ### Installing Software
 
@@ -27,7 +27,7 @@ A Hadoop distribution, download a recent stable release from one of the [Apache 
 
 TIP: Check 32-bit or 64-bit OS: `getconf LONG_BIT`
 
-+ JDK - download [oracle 1.7.0_45](http://download.oracle.com/otn/java/jdk/7u45-b18/jdk-7u45-linux-x64.tar.gz)
+- JDK - download [oracle 1.7.0_45](http://download.oracle.com/otn/java/jdk/7u45-b18/jdk-7u45-linux-x64.tar.gz)
 
 ```shell
 sudo mkdir /usr/local/java
@@ -37,7 +37,7 @@ cd /usr/local/java/ && sudo tar -xzvf jdk-7u45-linux-x64.gz
 
 ```shell
 sudo vim /etc/profile
-# /etc/profile  
+# /etc/profile
 JAVA_HOME=/usr/local/java/jdk1.7.0_45
 JRE_HOME=$JAVA_HOME/jre
 PATH=$slug:$JAVA_HOME/bin:$JRE_HOME/bin
@@ -47,7 +47,7 @@ export PATH
 ```
 
 ```shell
-# Inform your Ubuntu Linux system where your Oracle Java JDK/JRE is located. 
+# Inform your Ubuntu Linux system where your Oracle Java JDK/JRE is located.
 sudo update-alternatives --install "/usr/bin/java" "java" "/usr/local/java/jdk1.7.0_45/jre/bin/java" 1
 sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/local/java/jdk1.7.0_45/bin/javac" 1
 sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/local/java/jre1.7.0_45/bin/javaws" 1
@@ -61,8 +61,8 @@ sudo update-alternatives --set javaws /usr/local/java/jdk1.7.0_45/bin/javaws
 . /etc/profile
 ```
 
-+ Hadoop-2.6.0
-+ Unpack the downloaded Hadoop distribution.
+- Hadoop-2.6.0
+- Unpack the downloaded Hadoop distribution.
 
 ```shell
 # vim etc/hadoop/hadoop-env.sh
@@ -72,6 +72,7 @@ export JAVA_HOME=/usr/local/java/jdk1.7.0_45
 ```
 
 ### Configuration
+
 Now you are ready to start your Hadoop cluster in one of the three supported modes:
 
 - Local (Standalone) Mode
@@ -135,7 +136,7 @@ localhost
 ```
 
 ```shell
-# You can start all processes with start-all.sh, but better starts the process one by one 
+# You can start all processes with start-all.sh, but better starts the process one by one
 sbin/start-all.sh
 
 # Start dfs or YARN with one command
