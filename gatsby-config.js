@@ -16,6 +16,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-google-adsense',
+      options: {
+        publisherId: 'ca-pub-2343695267074726'
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content`,
