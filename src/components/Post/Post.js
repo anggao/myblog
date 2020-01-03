@@ -6,6 +6,7 @@ import Comments from './Comments';
 import Content from './Content';
 import Meta from './Meta';
 import Tags from './Tags';
+import GoogleAds from '../GoogleAds';
 import styles from './Post.module.scss';
 import type { Node } from '../../types';
 
@@ -29,6 +30,7 @@ const Post = ({ post }: Props) => {
       <div className={styles['post__footer']}>
         <Meta date={date} />
         {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs} />}
+        <GoogleAds slot="8777655695" />
         <Author />
       </div>
 
